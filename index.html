@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<style>
+    td,tr,table{
+        border: 1px solid black;
+
+    }
+    table{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        border-collapse: collapse;
+        width: 20%;
+    }
+</style>
+<body>
+    <table id="myTable">
+    </table>
+    <br>
+    
+    <button type="button" onclick="myFunction()">Try it</button>
+    
+    <script>
+    function myFunction() {
+      var table = document.getElementById("myTable");
+      
+      var abc = new Array(5);
+      for(var i = 0; i < abc.length; i ++){
+            abc[i] = new Array(5);
+        }
+        var base = new Array(25);
+        var h = 0;
+        // for(var i = 0; i < 5; i++){
+        //     for(var j = 0; j<5; j++){
+        //         abc[i][j] = h++;
+        //         //console.log(abc[i][j]);
+        //         // abc[i][j] = 
+        //     }
+        // }
+
+
+        for(var i=0; i<25; i++){
+            base[i] = h++;
+        }
+        //console.log(base)
+
+        // for(var i = 0; i < 5; i++){
+        //     for(var j = 0; j<5; j++){
+        //         abc[i][j] = base[k];
+        //         //console.log(abc[i][j]);
+        //         // abc[i][j] = 
+        //     }
+        // }
+
+        for(var k=0; k<25; k++){
+            i=Math.floor((Math.random() * 5));
+            j=Math.floor((Math.random() * 5));
+            console.log(i, j, k);
+            abc[i][j] = base[k];
+        }
+
+    function shuffle(arr){
+
+    }
+
+    var row = table.insertRow(0);
+
+      var cell00 = row.insertCell(0);
+      var cell01 = row.insertCell(1);
+      var cell02 = row.insertCell(2);
+      var cell03 = row.insertCell(3);
+      var cell04 = row.insertCell(4);
+
+      cell00.innerHTML = abc[0][0];
+      cell01.innerHTML = abc[0][1];
+      cell02.innerHTML = abc[0][2];
+      cell03.innerHTML = abc[0][3];
+      cell04.innerHTML = abc[0][4];
+
+      var row1 = table.insertRow(1);
+
+      var cell10 = row1.insertCell(0);
+      var cell11 = row1.insertCell(1);
+      var cell12 = row1.insertCell(2);
+      var cell13 = row1.insertCell(3);
+      var cell14 = row1.insertCell(4);
+
+      cell10.innerHTML = abc[1][0];
+      cell11.innerHTML = abc[1][1];
+      cell12.innerHTML = abc[1][2];
+      cell13.innerHTML = abc[1][3];
+      cell14.innerHTML = abc[1][4];
+
+      var row2 = table.insertRow(2);
+
+      var cell20 = row2.insertCell(0);
+      var cell21 = row2.insertCell(1);
+      var cell22 = row2.insertCell(2);
+      var cell23 = row2.insertCell(3);
+      var cell24 = row2.insertCell(4);
+
+      cell20.innerHTML = abc[2][0];
+      cell21.innerHTML = abc[2][1];
+      cell22.innerHTML = abc[2][2];
+      cell23.innerHTML = abc[2][3];
+      cell24.innerHTML = abc[2][4];
+
+      var row3 = table.insertRow(3);
+
+      var cell30 = row3.insertCell(0);
+      var cell31 = row3.insertCell(1);
+      var cell32 = row3.insertCell(2);
+      var cell33 = row3.insertCell(3);
+      var cell34 = row3.insertCell(4);
+
+      cell30.innerHTML = abc[3][0];
+      cell31.innerHTML = abc[3][1];
+      cell32.innerHTML = abc[3][2];
+      cell33.innerHTML = abc[3][3];
+      cell34.innerHTML = abc[3][4];
+
+      var row4 = table.insertRow(4);
+
+      var cell40 = row4.insertCell(0);
+      var cell41 = row4.insertCell(1);
+      var cell42 = row4.insertCell(2);
+      var cell43 = row4.insertCell(3);
+      var cell44 = row4.insertCell(4);
+
+      cell40.innerHTML = abc[4][0];
+      cell41.innerHTML = abc[4][1];
+      cell42.innerHTML = abc[4][2];
+      cell43.innerHTML = abc[4][3];
+      cell44.innerHTML = abc[4][4];
+
+
+
+    }
+    </script>
+    
+    </body>
+</html>
