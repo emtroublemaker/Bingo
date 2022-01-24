@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<style>
+    td,tr,table{
+        border: 2px solid black;
+        
+
+    }
+    table{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        border-collapse: collapse;
+        width: 50%;
+        height: 50%;
+    }
+    img{
+        display: block;
+        height: 150%;
+        width: 50%;
+    }
+</style>
+<body>
+    <table id="myTable">
+    
+    <br>
+    
+    <button type="button" onclick="myFunction()">Try it</button>
+    <script>
+    function myFunction() {
+      var table = document.getElementById("myTable");
+
+    var abc = [];
+    while(abc.length < 25){
+        var r = Math.floor(Math.random() * 25) + 1;
+        if(abc.indexOf(r) === -1) 
+            abc.push(r);
+    }
+    console.log(abc);
+
+    function add_img(){ 
+        var img = document.createElement('img'); 
+        img.src = 'C:/Users/hp/Desktop/xampp/htdocs/housie/img'; 
+        document.getElementById('myTable').appendChild(img);
+        console.log("Imaged placed"); 
+    }
+    add_img();
+
+
+    var row = table.insertRow(0);
+
+      var cell00 = row.insertCell(0);
+      var cell01 = row.insertCell(1);
+      var cell02 = row.insertCell(2);
+      var cell03 = row.insertCell(3);
+      var cell04 = row.insertCell(4);
+
+      cell00.innerHTML = abc[0];
+      var button = document.createElement("input")
+    //button.setAttribute("type","button","img");
+      button.setAttribute("type","button");
+      cell00.appendChild(button).style.width="50%";
+      
+
+      cell01.innerHTML = abc[1];
+      var button = document.createElement("input")
+      button.setAttribute("type","button");
+      cell01.appendChild(button).style.width="50%";
+      cell01.append.img="flow.jpg";
+
+      cell02.innerHTML = abc[2];
+      var button = document.createElement("input")
+      button.setAttribute("type","button");
+      cell02.appendChild(button).style.width="50%";
+
+      cell03.innerHTML = abc[3];
+      var button = document.createElement("input")
+      button.setAttribute("type","button");
+      cell03.appendChild(button).style.width="50%";
+
+      cell04.innerHTML = abc[4];
+      var button = document.createElement("input")
+      button.setAttribute("type","button");
+      cell04.appendChild(button).style.width="50%";
+
+      var row1 = table.insertRow(1);
+
+      var cell10 = row1.insertCell(0);
+      var cell11 = row1.insertCell(1);
+      var cell12 = row1.insertCell(2);
+      var cell13 = row1.insertCell(3);
+      var cell14 = row1.insertCell(4);
+
+      cell10.innerHTML = abc[5];
+      cell11.innerHTML = abc[6];
+      cell12.innerHTML = abc[7];
+      cell13.innerHTML = abc[8];
+      cell14.innerHTML = abc[9];
+
+      var row2 = table.insertRow(2);
+
+      var cell20 = row2.insertCell(0);
+      var cell21 = row2.insertCell(1);
+      var cell22 = row2.insertCell(2);
+      var cell23 = row2.insertCell(3);
+      var cell24 = row2.insertCell(4);
+
+      cell20.innerHTML = abc[10];
+      cell21.innerHTML = abc[11];
+      cell22.innerHTML = abc[12];
+      cell23.innerHTML = abc[13];
+      cell24.innerHTML = abc[14];
+
+      var row3 = table.insertRow(3);
+
+      var cell30 = row3.insertCell(0);
+      var cell31 = row3.insertCell(1);
+      var cell32 = row3.insertCell(2);
+      var cell33 = row3.insertCell(3);
+      var cell34 = row3.insertCell(4);
+
+      cell30.innerHTML = abc[15];
+      cell31.innerHTML = abc[16];
+      cell32.innerHTML = abc[17];
+      cell33.innerHTML = abc[18];
+      cell34.innerHTML = abc[19];
+
+      var row4 = table.insertRow(4);
+
+      var cell40 = row4.insertCell(0);
+      var cell41 = row4.insertCell(1);
+      var cell42 = row4.insertCell(2);
+      var cell43 = row4.insertCell(3);
+      var cell44 = row4.insertCell(4);
+
+      cell40.innerHTML = abc[20];
+      cell41.innerHTML = abc[21];
+      cell42.innerHTML = abc[22];
+      cell43.innerHTML = abc[23];
+      cell44.innerHTML = abc[24];
+    }
+    </script>
+    </table>
+    </body>
+</html>
