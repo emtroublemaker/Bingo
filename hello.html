@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <form action="server.php"></form>
+    <p id="rand"></p>
+    <script>
+    setInterval(randomNumber,3000);
+
+function randomNumber(){
+  document.getElementById("rand").innerHTML = Math.floor(Math.random() * 25);
+}
+</script>
+
+</html>
