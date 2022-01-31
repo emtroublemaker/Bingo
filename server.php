@@ -7,7 +7,7 @@
 </style>
 </head>
 <body>  
-    <button type="button">Click</button>
+<!--     <button type="button">Click</button> -->
     <form action="hello.html"></form>
 
 <?php
