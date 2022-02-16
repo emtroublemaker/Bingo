@@ -1,16 +1,22 @@
-<!DOCTYPE HTML>  
+  <!DOCTYPE html>
 <html>
-<head>
-    <form action="hello.html"></form>
-<style>
-.error {color: #FF0000;}
-</style>
-</head>
-<body>  
-<!--     <button type="button">Click</button> -->
-    <form action="hello.html"></form>
-
-<?php
+    <style>
+        .butt{
+            border: none;
+            color: rgb(10, 9, 9);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+            <form method = "post">
+        <button  name="button1" class="butt" > Your Next Number is: </button>
+    </form>
+    <?php
 
 //Connecting to Database
 $host ="localhost";
@@ -28,31 +34,50 @@ if (!$conn){
 echo "Connection was successful";
 echo "<br>";  
 
-$val = 'Math.floor(Math.random() * 25)';
-// Random Number
-$sql = "INSERT INTO `numbers`(`alternate`) VALUES ('$val')";
-// $sql = "INSERT INTO alternate FLOOR(RAND()*(25-10+1))+10";
 
-if(mysqli_query($conn, $sql)){
-//   echo "Added successfully";
- 
-  echo "<br>";
-  echo "Random number sent to local server";
-}
-else {
-  echo "Error".mysqli_error($conn);
-}
-  //close connection
-  mysqli_close($conn);
+$num = range(1,25);
+global $num;
+// print_r($num);
 
-  ?>
-  </body>
-  <!-- <p id="rand"></p>
+echo "<br>";
+shuffle($num);
+// print_r($num);
+echo "<br>";
+print_r ($num);
+// print_r ($num[0]);
+
+// $arrayind = 0;
+function sendTodb($conn, $num, ){
+    $var = $num[0];
+    // $sql = "INSERT into numbers VALUES ('$var')";
+    $sql = "INSERT INTO `numbers`(`ID`, `alternate`) VALUES ('','$var')";
+    if(mysqli_query($conn,$sql)){
+        echo "<br>";
+        echo "Added Succssfully";
+        // print_r($num);
+    }
+    else{
+        echo "Error".mysqli_error($conn);
+    }
+}
+
+function randombtn($conn, $num){
+    sendTodb($conn, $num);
+    array_shift($num);
+}
+
+if(isset($_POST['button1']))
+{
+    randombtn($conn, $num);
+}
+
+
+// if(array_key_exists('button1', $_POST)) {
+//     randombtn($conn, $num);
+// }
+
+?>
     <script>
-    setInterval(randomNumber,3000);
-
-function randomNumber(){
-  document.getElementById("rand").innerHTML = Math.floor(Math.random() * 25);
-}
-</script> -->
-  </html>
+        // localstorage.setITem(arr,$num);
+    </script>
+    </html>
